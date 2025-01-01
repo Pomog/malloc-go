@@ -6,7 +6,7 @@ import (
 	"unsafe"
 )
 
-func main() {
+func main1() {
 
 	// subArray[0] changes testArray[3] because slices share the same underlying array
 	var testArray [9]int32
