@@ -1,7 +1,6 @@
 package dublicates
 
 import (
-	"fmt"
 	"sync"
 )
 
@@ -11,7 +10,6 @@ func HasDuplicatesParallel(nums []int, numWorkers int) bool {
 	}
 
 	chunkSize := (int)(len(nums) / numWorkers)
-	fmt.Printf("chunkSize %d\n", chunkSize)
 
 	var wg sync.WaitGroup
 	mu := sync.Mutex{}
@@ -29,6 +27,7 @@ func HasDuplicatesParallel(nums []int, numWorkers int) bool {
 				foundDuplicate = true
 				mu.Unlock()
 				//TODO  I need to brake all go routines here
+
 				return
 			}
 			localSeen[num] = struct{}{}
