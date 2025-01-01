@@ -20,8 +20,8 @@ func main() {
 	//nums[4_599_999] = 1
 
 	start := time.Now()
-	fmt.Println("Using single thread:", dublicates.HasDuplicates(nums), "Time:", time.Since(start)) // 2.168 sec on my comp
+	fmt.Println("Using single thread:", dublicates.HasDuplicates(nums), "Time:", time.Since(start)) // 2.222 sec on my comp
 
 	start = time.Now()
-	fmt.Println("Using gorutines:", dublicates.HasDuplicatesParallel(nums, 4), "Time:", time.Since(start)) // 0.816 sec on my comp
+	fmt.Println("Using gorutines:", dublicates.HasDuplicatesParallel(nums, 500), "Time:", time.Since(start)) // 0.412 sec on my comp
 }

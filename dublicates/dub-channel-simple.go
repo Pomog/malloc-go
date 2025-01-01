@@ -1,12 +1,13 @@
 package dublicates
 
 import (
+	"log"
 	"sync"
 )
 
 func HasDuplicatesParallel(nums []int, numWorkers int) bool {
-	if len(nums) == 0 {
-		return false
+	if len(nums) == 0 || numWorkers == 0 {
+		log.Fatal("0 error")
 	}
 
 	chunkSize := (int)(len(nums) / numWorkers)
